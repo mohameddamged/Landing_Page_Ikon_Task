@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pluggy - تواصل ومبيعات أكثر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <img src="assets/logo.svg" alt="Pluggy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" />
+        <span class="logo-fallback" style="display:none;">plu<span>gg</span>y</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#" class="active">الرئيسية</a>
+        <a href="#tools">الادوات</a>
+        <a href="#pricing">الباقات</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary">تسجيل دخول</a>
+        <a href="#" class="btn btn-outline">ابدأ مجاناً</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="floating-badge badge-right">
+        <img src="assets/whatsapp-float.svg" alt="WhatsApp" />
+      </div>
+      <div class="floating-badge badge-left">
+        <img src="assets/telegram-float.svg" alt="Telegram" />
+      </div>
+
+      <div class="hero-content">
+        <h1 class="hero-title">
+          تواصل <span id="dynamic-word" class="highlight-word">أكثر</span><br />
+          ومبيعات
+        </h1>
+        <p class="hero-subtitle">
+          فعّل أدوات تواصل ذكية داخل متجرك، وسهّل على عملائك الوصول<br />
+          إليك في أي وقت بكل سرعة وسهولة.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-dark">اشترك الان</a>
+          <a href="#" class="btn btn-outline-light">جرب دلوقتي</a>
+        </div>
+      </div>
+
+      <div class="hero-showcase">
+        <div class="dashboard-mockup">
+          <img src="assets/hero-dashboard.png" alt="Pluggy Dashboard" />
+        </div>
+
+        <div class="floating-card card-left offer-popup" id="offer-popup">
+          <button class="offer-close-btn" id="close-offer-btn" aria-label="إغلاق">×</button>
+          <h4 class="offer-title">عرض خاص</h4>
+          <p class="offer-subtitle">سينتهي هذا العرض قريباً اسرع!</p>
+
+          <div class="countdown-wrapper">
+            <div class="countdown-item">
+              <svg class="progress-ring" width="66" height="66" viewBox="0 0 68 68">
+                <circle class="progress-ring-dots" cx="34" cy="34" r="28" />
+                <circle class="progress-ring-bar" id="seconds-ring" cx="34" cy="34" r="28" />
+              </svg>
+              <div class="countdown-text">
+                <span class="time-val" id="offer-seconds">20</span>
+                <span class="time-label">ثانيه</span>
+              </div>
+            </div>
+
+            <div class="countdown-item">
+              <svg class="progress-ring" width="66" height="66" viewBox="0 0 68 68">
+                <circle class="progress-ring-dots" cx="34" cy="34" r="28" />
+                <circle class="progress-ring-bar" id="minutes-ring" cx="34" cy="34" r="28" />
+              </svg>
+              <div class="countdown-text">
+                <span class="time-val" id="offer-minutes">50</span>
+                <span class="time-label">دقيقه</span>
+              </div>
+            </div>
+
+            <div class="countdown-item">
+              <svg class="progress-ring" width="66" height="66" viewBox="0 0 68 68">
+                <circle class="progress-ring-dots" cx="34" cy="34" r="28" />
+                <circle class="progress-ring-bar" id="hours-ring" cx="34" cy="34" r="28" />
+              </svg>
+              <div class="countdown-text">
+                <span class="time-val" id="offer-hours">23</span>
+                <span class="time-label">ساعه</span>
+              </div>
+            </div>
+          </div>
+
+          <form class="offer-form" id="offer-form">
+            <label for="offer-email">البريد الالكتروني</label>
+            <input type="email" id="offer-email" placeholder="m@example.com" required />
+            <button type="submit" class="offer-submit-btn">ارسل لي العرض</button>
+          </form>
+        </div>
+
+        <div class="floating-card card-right">
+          <span class="status-dot"></span>
+          <span>نشط الان 100 زائر</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BRANDS ================= -->
+  <section class="brands">
+    <div class="container brands-flex">
+      <img src="assets/brand-1.svg" alt="MakeLess" />
+      <img src="assets/brand-2.svg" alt="coworks" />
+      <img src="assets/brand-3.svg" alt="greener" />
+      <img src="assets/brand-4.svg" alt="SAAS TODAY" />
+      <img src="assets/brand-5.svg" alt="Dorfus" />
+      <img src="assets/brand-6.svg" alt="askimat" />
+    </div>
+  </section>
+
+  <!-- ================= ACTIVATION STEPS ================= -->
+  <section class="steps-section">
+    <div class="container">
+      <h2 class="section-title">خطوات بسيطه للتفعيل</h2>
+
+      <div class="stepper-wrapper">
+        <div class="stepper-track">
+          <div class="stepper-progress" id="stepper-progress"></div>
+        </div>
+
+        <div class="step-item active" data-step="1">
+          <div class="step-circle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+          </div>
+          <h3>اربط متجرك</h3>
+          <p>اختر منصه متجرك<br />واربطها بحسابك في دقائق</p>
+        </div>
+
+        <div class="step-item" data-step="2">
+          <div class="step-circle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+              <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
+              <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
+              <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
+            </svg>
+          </div>
+          <h3>اختر الادوات</h3>
+          <p>تصفح الادوات المتاحه واختر<br />مايناسب احتياجك</p>
+        </div>
+
+        <div class="step-item" data-step="3">
+          <div class="step-circle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+            </svg>
+          </div>
+          <h3>فعل وابدأ البيع</h3>
+          <p>فعل الادوات على متجرك<br />وابدأ في زياده مبيعاتك</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VARIOUS TOOLS (FIXED LAYOUT) ================= -->
+  <section class="tools-section" id="tools">
+    <div class="container tools-container">
+      <div class="tools-info-column">
+        <div class="tools-sticky-box">
+          <h2>ادوات متنوعه</h2>
+          <p>لمساعده متجرك في التواصل السريع مع العملاء</p>
+          <a href="#" class="btn btn-dark">اشترك الان</a>
+        </div>
+      </div>
+
+      <div class="tools-cards-column">
+        <div class="tool-visual-card">
+          <img src="assets/tools-stack.svg" alt="WhatsApp Tool" />
+        </div>
+        <!-- <div class="tool-visual-card">
+          <img src="assets/tools-stack.svg"  alt="Telegram Tool" />
+        </div>
+        <div class="tool-visual-card">
+          <img src="assets/tools-stack.svg"  alt="Social Stack Tool" />
+        </div>
+        <div class="tool-visual-card">
+          <img src="assets/tools-stack.svg"  alt="Spin Wheel Tool" />
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ENGAGEMENT / SPIN WHEEL SECTION ================= -->
+  <section class="engagement-section">
+    <div class="container engagement-container">
+      <div class="engagement-text">
+        <h2>زود تفاعل جمهورك</h2>
+        <p>
+          استخدم العروض المميزه والخصومات<br />
+          الجديده لجذب العملاء وتحفيزهم على<br />
+          الشراء.
+        </p>
+      </div>
+
+      <div class="engagement-visual">
+        <img src="assets/spin.svg" alt="Spin the wheel" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTEGRATED SOLUTIONS ================= -->
+  <section class="solutions-section">
+    <div class="container">
+      <div class="solutions-header">
+        <h2>حلول متكاملة لزيادة المبيعات</h2>
+        <p>فعّل أدوات التواصل، العروض، والسوشيال في مكان واحد علشان تحقق أفضل نتائج.</p>
+      </div>
+
+      <div class="solutions-content">
+        <div class="solutions-tabs" id="solutions-tabs">
+          <button class="tab-btn active" data-img="assets/whatsapp.svg">الواتساب</button>
+          <button class="tab-btn" data-img="assets/whatsapp.svg">التيليجرام</button>
+          <button class="tab-btn" data-img="assets/whatsapp.svg">عجله الحظ</button>
+          <button class="tab-btn" data-img="assets/whatsapp.svg">تواصل معنا</button>
+          <button class="tab-btn" data-img="assets/whatsapp.svg">العروض والخصومات</button>
+        </div>
+
+        <div class="solutions-preview">
+          <div class="laptop-frame">
+            <img id="solution-preview-img" src="assets/laptop-whatsapp-preview.png" alt="Tool Preview" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS SLIDER ================= -->
+  <section class="testimonials-section">
+    <div class="container testimonials-container">
+      <div class="testimonials-info">
+        <h2>من قصص نجاح عملائنا</h2>
+        <p>اكثر من 200 عميل وثقوا بنا</p>
+        <div class="slider-controls">
+          <button id="prev-testimonial" aria-label="السابق">&#8250;</button>
+          <button id="next-testimonial" aria-label="التالي">&#8249;</button>
+        </div>
+      </div>
+
+      <div class="testimonials-slider-wrapper">
+        <div class="testimonials-track" id="testimonials-track">
+          <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <div class="client-header">
+              <img src="assets/avatar-1.png" alt="عبد الله الحارث" class="client-avatar" />
+              <div>
+                <h4>عبد الله الحارث</h4>
+                <span>CEO at Innovate Solutions</span>
+              </div>
+            </div>
+            <p class="client-quote" dir="ltr">
+              "Their attention to detail and creative design approach transformed our website into a visually stunning and highly functional platform. We've seen a 30% increase in traffic since the relaunch. I highly recommend them to anyone seeking professional web design services!"
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <div class="client-header">
+              <img src="assets/avatar-1.png" alt="سارة المنصور" class="client-avatar" />
+              <div>
+                <h4>سارة المنصور</h4>
+                <span>Founder at Glow Store</span>
+              </div>
+            </div>
+            <p class="client-quote" dir="ltr">
+              "Integrating WhatsApp and the spin-to-win wheel took less than five minutes. Our customer response rate doubled within the first week and abandoned carts dropped significantly."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEWSLETTER & FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="newsletter-box">
+        <h3>اشترك الان ليصلك اخبارنا</h3>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit" class="btn btn-primary">اشترك الان</button>
+        </form>
+      </div>
+
+      <div class="footer-links-row">
+        <div class="social-icons">
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Vimeo">v</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Facebook">f</a>
+        </div>
+
+        <ul class="footer-nav">
+          <li><a href="#">الرئيسية</a></li>
+          <li><a href="#tools">الادوات</a></li>
+          <li><a href="#">سياسات الخصوصية</a></li>
+          <li><a href="#">الاسئله الشائعه</a></li>
+        </ul>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <div class="footer-logo">plu<span>gg</span>y</div>
+        <p>© جميع الحقوق محفوظة 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
