@@ -144,3 +144,58 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+
+// تشغيل العداد الرقمي في سكشن عجلة الحظ
+let digTotal = 12 * 3600 + 25 * 60 + 45;
+const digHr = document.getElementById("dig-hr");
+const digMin = document.getElementById("dig-min");
+const digSec = document.getElementById("dig-sec");
+const digSecPrev = document.getElementById("dig-sec-prev");
+const digSecNext = document.getElementById("dig-sec-next");
+const closeDigitalBtn = document.getElementById("close-digital-offer");
+const digitalCard = document.getElementById("digital-offer-card");
+const digitalForm = document.getElementById("digital-offer-form");
+
+if (closeDigitalBtn && digitalCard) {
+  closeDigitalBtn.addEventListener("click", () => {
+    digitalCard.style.display = "none";
+  });
+}
+
+if (digitalForm) {
+  digitalForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const emailInput = document.getElementById("dig-email");
+    alert(`تم إرسال العرض إلى: ${emailInput.value}`);
+    emailInput.value = "";
+  });
+}
+
+if (digHr && digMin && digSec) {
+  setInterval(() => {
+    if (digTotal <= 0) return;
+    digTotal--;
+
+    const hrs = Math.floor(digTotal / 3600);
+    const mins = Math.floor((digTotal % 3600) / 60);
+    const secs = digTotal % 60;
+
+    digHr.textContent = String(hrs).padStart(2, "0");
+    digMin.textContent = String(mins).padStart(2, "0");
+
+    digSec.style.transform = "translateY(-4px)";
+    digSec.style.opacity = "0.6";
+
+    setTimeout(() => {
+      digSec.textContent = String(secs).padStart(2, "0");
+      digSec.style.transform = "translateY(0)";
+      digSec.style.opacity = "1";
+
+      const lastDigit = secs % 10;
+      if (digSecPrev) digSecPrev.textContent = (lastDigit + 9) % 10;
+      if (digSecNext) digSecNext.textContent = (lastDigit + 1) % 10;
+    }, 150);
+  }, 1000);
+}
